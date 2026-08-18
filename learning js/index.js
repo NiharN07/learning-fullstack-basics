@@ -203,12 +203,12 @@ function attack() {
 	text.innerText = "The" + monsters[fighting].name + "attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
     health -= getMonsterAttackValue(monsters[fighting].level);
+	
 	if (isMonsterHit()) {
 	    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
 	} else {
 		text.innerText += "You miss.";
 	}
-	
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
@@ -217,12 +217,12 @@ function attack() {
 	    fighting === 2 ? winGame() : defeatMonster();
 	}
 
-
     if (Math.random()<= .1 && inventory.length1== 1) {
         text.innerText += "Your" + inventory.pop() + "breaks.";
 		currentWeapon--;
 	}
 }
+
 function getMonsterAttackValue(level) {
 	let hit = (level * 5) - (Math.floor(Math.random() * xp));
 	console.log(hit);
