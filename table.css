@@ -1,0 +1,13 @@
+body {
+
+}
+table , th, td {
+    /*visibility:hidden;*/
+    border: 5px solid black;
+    width: 33.33%;
+    border-collapse: collapse
+
+}
+tr:hover {
+    background-color: red;
+}
